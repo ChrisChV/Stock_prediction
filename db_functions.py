@@ -2,14 +2,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pylab import rcParams
-from sklearn.preprocessing import MinMaxScaler
 
 DATABASE_FILE_NAME = "NSE-TATAGLOBAL11.csv"
 
 
 def getDb():
     rcParams['figure.figsize'] = 20,10
-    scaler = MinMaxScaler(feature_range=(0, 1))
     df = pd.read_csv(DATABASE_FILE_NAME)
 
     df['Date'] = pd.to_datetime(df.Date,format='%Y-%m-%d')
